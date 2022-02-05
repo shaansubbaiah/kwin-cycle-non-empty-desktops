@@ -23,7 +23,7 @@ function switchDesktop(position) {
     if (position == 'next') {
         // we cycle from cur+1 clockwise to cur-1
         for (let i = 1; i < n; i++) {
-            j = (cur + i) % n;
+            let j = (cur + i) % n;
 
             if (desktops[j] != 0) {
                 workspace.currentDesktop = (j + 1);
@@ -34,7 +34,7 @@ function switchDesktop(position) {
     else if (position == 'prev') {
         // we cycle from cur-1 anticlockwise to cur+1
         for (let i = 1; i < n; i++) {
-            j = (cur - i) % n;
+            let j = (cur - i) % n;
             if (j < 0) j += n;
 
             if (desktops[j] != 0) {
