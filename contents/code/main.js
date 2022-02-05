@@ -27,7 +27,7 @@ function switchDesktop(position) {
 
             if (desktops[j] != 0) {
                 workspace.currentDesktop = (j + 1);
-                return
+                return;
             }
         }
     }
@@ -39,7 +39,7 @@ function switchDesktop(position) {
 
             if (desktops[j] != 0) {
                 workspace.currentDesktop = (j + 1);
-                return
+                return;
             }
         }
     }
