@@ -6,10 +6,6 @@ print('desktops:', workspace.desktops) // num of desktops
 print('current: ', workspace.currentDesktop) // current desktop
 
 
-registerShortcut('SwitchToNextNonEmptyDesktop', 'Switch to the Next Non-Empty Desktop', 'Meta+(', function () { switchDesktop('next'); });
-registerShortcut('SwitchToPreviousNonEmptyDesktop', 'Switch to the Previous Non-Empty Desktop', 'Meta+)', function () { switchDesktop('prev'); });
-
-
 function generateDesktopArray() {
     // arr[i] stores number of applications in desktop i+1
     let arr = new Array(workspace.desktops);
@@ -40,14 +36,13 @@ function switchDesktop(position) {
             j = (cur + i) % n;
             print('i=', i, ' j=', j);
 
-            if (desktops[j] == 0) {
-                print('desktop ', j, ' empty')
+            if (desktops[j] != 0) {
+                print('desktop ', j, ' busy')
                 workspace.currentDesktop = (j + 1);
                 return
             }
-            print('desktop ', j, ' busy')
+            print('desktop ', j, ' empty')
         }
-        return
     }
     else if (position == 'prev') {
         print('from ', cur, ' to prev non empty')
@@ -56,15 +51,18 @@ function switchDesktop(position) {
             j = (cur - i) % n;
             if (j < 0) j += n;
             print('i=', i, ' j=', j);
-            if (desktops[j] == 0) {
-                print('desktop ', j, ' empty')
+            if (desktops[j] != 0) {
+                print('desktop ', j, '  busy')
                 workspace.currentDesktop = (j + 1);
                 return
             }
-            else print('desktop ', j, ' busy')
+            else print('desktop ', j, ' empty')
         }
-        return
-
     }
 
+    return;
 }
+
+
+registerShortcut('SwitchToNextNonEmptyDesktop', 'Switch to the Next Non-Empty Desktop', 'Meta+Shift+S', function () { switchDesktop('next'); });
+registerShortcut('SwitchToPreviousNonEmptyDesktop', 'Switch to the Previous Non-Empty Desktop', 'Meta+Shift+W', function () { switchDesktop('prev'); });
