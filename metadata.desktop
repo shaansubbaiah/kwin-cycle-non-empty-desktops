@@ -1,0 +1,15 @@
+[Desktop Entry]
+Name=Cycle Non Empty Desktops
+Comment=KWin Script to switch to the next or previous non empty virtual desktop.
+Icon=preferences-system-windows
+
+X-KDE-PluginInfo-Author=Shaan Subbaiah B C
+X-KDE-PluginInfo-Email=shaansubbaiah@yahoo.com
+X-KDE-PluginInfo-Name=kwin-cycle-non-empty-desktops
+X-KDE-PluginInfo-Version=1.0
+X-KDE-PluginInfo-License=MIT
+
+Type=Service
+X-KDE-ServiceTypes=KWin/Script
+X-Plasma-API=javascript
+X-Plasma-MainScript=code/main.js
