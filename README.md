@@ -3,13 +3,24 @@ KWin Script to switch to the next or previous non empty virtual desktop.
 
 ## Installation
 
-### Method 1: From kwinscript file
+### Method 1: From the KDE Store
+
+Go to `System Settings` -> `Window Management` -> `KWin Scripts` -> `Get New Scripts`
+
+Search for 'KWin Cycle Non Empty Desktops'
+
+Click the Install button
+
+**NOTE:** The direct store URL is https://www.pling.com/p/1700772/
+
+
+### Method 2: From kwinscript file
 
 Visit the [releases section](https://github.com/shaansubbaiah/kwin-cycle-non-empty-desktops/releases/) and download the _.kwinscript_ file.
 
-After that, you will be able to select this file in `System Settings` -> `KWin Scripts` -> `Install from File`.
+After that, you will be able to select this file in `System Settings` -> `Window Management` -> `KWin Scripts` -> `Install from File`.
 
-### Method 2: From source
+### Method 3: From source
 
 To install, run:
 ```
@@ -23,7 +34,7 @@ To update, run:
 ```
 git clone https://github.com/shaansubbaiah/kwin-cycle-non-empty-desktops &&  kpackagetool5 --type=KWin/Script -u kwin-cycle-non-empty-desktops
 ```
-**Note:** You will need to disable then enable script from `System Settings` -> `Kwin Scripts` for changes to take effect. You may also need to log out and back into the Plasma session for changes to take effect.
+**Note:** You will need to disable then enable script from `System Settings` -> `Window Management` -> `KWin Scripts` for changes to take effect. You may also need to log out and back into the Plasma session for changes to take effect.
 
 ---
 To uninstall, run:
