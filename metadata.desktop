@@ -1,6 +1,8 @@
 [Desktop Entry]
 Name=Cycle Non Empty Desktops
+Name[nl]=Schakelen tussen niet-lege bureaubladen
 Comment=KWin Script to switch to the next or previous non empty virtual desktop.
+Comment[nl]=Een KWin-script waarmee je kunt schakelen tussen niet-lege virtuele bureaubladen.
 Icon=preferences-system-windows
 
 X-KDE-PluginInfo-Author=Shaan Subbaiah B C
