@@ -11,7 +11,7 @@ Search for 'KWin Cycle Non Empty Desktops'
 
 Click the Install button
 
-**NOTE:** The direct store URL is https://www.pling.com/p/1700772/
+**NOTE:** The direct store URL is https://store.kde.org/p/1700772
 
 
 ### Method 2: From kwinscript file
