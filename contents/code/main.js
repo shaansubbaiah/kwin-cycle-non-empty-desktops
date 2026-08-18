@@ -1,32 +1,36 @@
 function generateDesktopArray() {
     // arr[i] stores number of applications in desktop i+1
-    let arr = new Array(workspace.desktops);
-    for (let i = 0; i < workspace.desktops; ++i) arr[i] = 0;
+    const arr = {};
+    workspace.desktops.forEach(x => arr[x.id] = 0);
+    arr.length = workspace.desktops.length;
+    windows = workspace.windowList();
 
-    clients = workspace.clientList();
-    for (let i = 0; i < clients.length; i++) {
+    for (const w of windows.filter(x => !x.onAllDesktops)) {
         // Client is on all desktops if value = -1
-        if (clients[i].desktop != -1) {
-            arr[clients[i].desktop - 1] += 1;
-        }
+        w.desktops.forEach(x => {
+           arr[x.id] += 1;
+        });
     }
 
     return arr;
 }
 
+function getDesktop(position) {
+    return workspace.desktops[position];
+}
 
 function switchDesktop(position) {
     let desktops = generateDesktopArray();
     let n = desktops.length;
-    let cur = workspace.currentDesktop - 1;
+    let cur = workspace.desktops.findIndex(x => x.id == workspace.currentDesktop.id);
 
     if (position == 'next') {
         // we cycle from cur+1 clockwise to cur-1
         for (let i = 1; i < n; i++) {
-            let j = (cur + i) % n;
-
-            if (desktops[j] != 0) {
-                workspace.currentDesktop = (j + 1);
+            const j = (cur + i) % n;
+            const desk = getDesktop(j);
+            if (desktops[desk.id] != 0) {
+                workspace.currentDesktop = desk;
                 return;
             }
         }
@@ -36,9 +40,10 @@ function switchDesktop(position) {
         for (let i = 1; i < n; i++) {
             let j = (cur - i) % n;
             if (j < 0) j += n;
+            const desk = getDesktop(j)
 
-            if (desktops[j] != 0) {
-                workspace.currentDesktop = (j + 1);
+            if (desktops[desk.id] != 0) {
+                workspace.currentDesktop = desk;
                 return;
             }
         }
