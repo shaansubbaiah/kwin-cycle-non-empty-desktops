@@ -1,6 +1,8 @@
 # kwin-cycle-non-empty-desktops
 KWin Script to switch to the next or previous non empty virtual desktop.
 
+Now supports Plasma 6 - thanks @cheerio-pixel
+
 ## Installation
 
 ### Method 1: From the KDE Store
@@ -25,14 +27,14 @@ After that, you will be able to select this file in `System Settings` -> `Window
 To install, run:
 ```
 git clone https://github.com/shaansubbaiah/kwin-cycle-non-empty-desktops
-kpackagetool5 --type=KWin/Script -i kwin-cycle-non-empty-desktops
+kpackagetool6 --type=KWin/Script -i kwin-cycle-non-empty-desktops
 ```
 ---
 
 To update, run:
 
 ```
-git clone https://github.com/shaansubbaiah/kwin-cycle-non-empty-desktops &&  kpackagetool5 --type=KWin/Script -u kwin-cycle-non-empty-desktops
+git clone https://github.com/shaansubbaiah/kwin-cycle-non-empty-desktops &&  kpackagetool6 --type=KWin/Script -u kwin-cycle-non-empty-desktops
 ```
 **Note:** You will need to disable then enable script from `System Settings` -> `Window Management` -> `KWin Scripts` for changes to take effect. You may also need to log out and back into the Plasma session for changes to take effect.
 
@@ -40,7 +42,7 @@ git clone https://github.com/shaansubbaiah/kwin-cycle-non-empty-desktops &&  kpa
 To uninstall, run:
 
 ```
-kpackagetool5 --type=KWin/Script -r kwin-cycle-non-empty-desktops
+kpackagetool6 --type=KWin/Script -r kwin-cycle-non-empty-desktops
 ```
 
 After installing the script, it must be also enabled in the System Settings.
@@ -66,7 +68,7 @@ View output/logs using `ksystemlog` and filter for _kwin_x11_
 
 Package _.kwinscript_ using:
 ```
-zip -r kwin-cycle-non-empty-desktops.kwinscript contents/ LICENSE metadata.desktop
+zip -r kwin-cycle-non-empty-desktops.kwinscript contents/ LICENSE metadata.json
 ```
 
 Plasma KWin Scripting Docs - https://develop.kde.org/docs/extend/plasma/kwin/
