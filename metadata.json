@@ -15,7 +15,7 @@
         "License": "MIT",
         "Name": "Cycle Non Empty Desktops",
         "Name[nl]": "Schakelen tussen niet-lege bureaubladen",
-        "Version": "1.0",
+        "Version": "1.1.0",
         "Website": ""
     },
     "X-Plasma-API": "javascript",
